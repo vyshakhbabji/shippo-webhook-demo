@@ -1,4 +1,4 @@
-#Shippo Webhooks Basic Sample App
+# Shippo Webhooks Basic Sample App
 
 This application is built to help provide developers with a clear understanding of how to utilize Shippo 
 Webhook Subscriptions.
@@ -10,12 +10,12 @@ In this app we are
     4. Listening to Webhook events
     
 
-##Prerequisites
+## Prerequisites
 * NPM installed locally
 * Node.js installed locally
 * ngrok or a web server which supports SSL/TLS v1.1 / v1.2
 
-##Installation 
+## Installation 
 * Clone the repository `git clone [this repository]`
 * Install the dependency 
 
@@ -25,7 +25,7 @@ npm install
 ```
  
 
-##Running the app 
+## Running the app 
 
 Copy the sample.env to .env and fill in the values for the following variables:
 ```text
@@ -38,7 +38,7 @@ cp sample.env .env
 node index.js
 ```
 
-##Configuring Webhook URL on Shippo API setting
+## Configuring Webhook URL on Shippo API setting
 When you run the app you will see instructions on the terminal/console as below. Please follow the instructions 
 as mentioned:
 
@@ -58,7 +58,7 @@ Webhook url is ready to use. Your webhook url is :  https://afb9-2600-1700-dd90-
 Now you should be able to recieve all the notification events to your locally setup webhook url
 You can also inspect webhook events via ngrok WebInterface inspector on url : http://localhost:4040
 ```
-##Testing 
+## Testing 
 
 As you have now subscribed to `All Events` ,  you should be able to see incoming notifications by just 
 running a sample transaction.
@@ -107,7 +107,7 @@ Webhook event  =========================>
 ***
 
 
-#Issues and Improvements 
+# Issues and Improvements 
 
 * If you want me to improve this demo or if you find any issues , please open issue on the issue section
 * I am open to improving and keeping this demo up to date to best of my knowledge
@@ -115,7 +115,7 @@ Webhook event  =========================>
 * Feel free to send PRs if you want to make any changes to this repo. 
 
 ***
-#About ngrok
+# About ngrok
 
 ## _What is ngrok?_
 
@@ -142,13 +142,13 @@ The first time you create a tunnel the ngrok process is spawned and runs until y
 
 ## ngrok installation
 
-####Via homebrew formula
+#### Via homebrew formula
 
 ```bash
 brew install --cask ngrok
 ```
 
-####Via npm
+#### Via npm
 Install the package with npm:
 
 ```bash
@@ -157,7 +157,7 @@ npm install ngrok -g
 
 For global installation on Linux, you might need to run `sudo npm install --unsafe-perm -g ngrok` due to the [nature](https://github.com/bubenshchykov/ngrok/issues/115#issuecomment-380927124) of npm postinstall script.
 
-###Running ngrok locally 
+### Running ngrok locally 
 ```bash
 ngrok http [port] 
 eg. ngrok http 8080
@@ -165,7 +165,7 @@ eg. ngrok http 8080
 
 
 
-##To know more about ngrok
+## To know more about ngrok
 [**How it works?**](https://ngrok.com/product)
 
 [**Learn more**](https://github.com/dwyl/learn-ngrok)
