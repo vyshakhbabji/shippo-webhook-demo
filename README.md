@@ -26,7 +26,17 @@ npm install
  
 
 ##Running the app 
-`node index.js`
+
+Copy the sample.env to .env and fill in the values for the following variables:
+```text
+PORT=8080
+TOKEN=[REPLACE WITH TOKEN]
+BASE_URL=https://api.goshippo.com/
+```
+```
+cp sample.env .env
+node index.js
+```
 
 ##Configuring Webhook URL on Shippo API setting
 When you run the app you will see instructions on the terminal/console as below. Please follow the instructions 
