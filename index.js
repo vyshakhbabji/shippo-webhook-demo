@@ -8,6 +8,10 @@ const bodyParser = require('body-parser');
 const BASE_URL = process.env.BASE_URL;
 let webhookUrl = '';
 
+/*
+ * Init ngrok and get the webhook url
+ */
+
 async function init(options) {
     console.log('Starting ngrok . Please wait ...');
     const url = await ngrok.connect(process.env.PORT);
@@ -27,6 +31,10 @@ async function init(options) {
         ' ');
     console.log('\n\n\nStarting express server....');
 }
+
+/*
+Start the express server
+ */
 
 function startNodeServer() {
     const app = express();
@@ -79,6 +87,9 @@ function startNodeServer() {
     });
 }
 
+/**
+ * Quick function to make POST request to Shippo API
+ */
 function makeShippoPostRequest(endpoint, data) {
     const url = BASE_URL + endpoint;
     const options = {
@@ -102,6 +113,18 @@ function makeShippoPostRequest(endpoint, data) {
     });
 }
 
+/*
+Here you are creating a Webhook
+https://goshippo.com/docs/reference#tracks-create
+POST /webhooks HTTP/1.1
+Host: api.goshippo.com
+Authorization: ShippoToken SHIPPOTOKEN
+Content-Type: application/json
+{
+  "url": "http://www.example.com",
+  "event": "track_updated"
+}
+ */
 function createWebhook() {
     console.log('\n\n\nCreating webhook for Shippo API');
     const webhookBody = {
@@ -112,6 +135,20 @@ function createWebhook() {
     makeShippoPostRequest('/webhooks', webhookBody);
 }
 
+/*
+Here you are creating a Shipping label
+https://goshippo.com/docs/reference#transactions-create
+
+POST /transactions HTTP/1.1
+Host: api.goshippo.com
+Authorization: ShippoToken SHIPPOTOKEN
+Content-Type: application/json
+{
+  "rate": "d9629f248ea24bc786ed921fff0c55ff",
+  "async": false,
+  "label_file_type": "PDF"
+}
+ */
 function createTransaction(){
     console.log('\n\n\nCreating transaction for Shippo API');
     const transactionObject = {
