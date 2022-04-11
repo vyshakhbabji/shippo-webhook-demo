@@ -4,10 +4,10 @@ This application is built to help provide developers with a clear understanding 
 Webhook Subscriptions.
 
 In this app we are 
-    1. Creating a ngrok tunnel and return webhook url
-    2. Creating a Shippo Webhook Subscription to webhooks url
-    3. Creating a transaction using Shippo's Create Transaction API call 
-    4. Listening to Webhook events
+* Creating a ngrok tunnel and return webhook url
+* Creating a Shippo Webhook Subscription to webhooks url
+* Creating a transaction using Shippo's Create Transaction API call 
+* Listening to Webhook events
     
 
 ## Prerequisites
